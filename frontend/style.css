@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+    margin: 0;
+    padding-top: 70px; /* Ensure navbar space */
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 10;
+}
+
+.navbar-links {
+    display: flex;
+    column-gap: 20px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #1d232c;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+    color: #1d232c;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+/* Form and Buttons Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+#formContainer label {
+    margin: 0; /* Removes any default margin */
+}
+
+#formContainer input, #formContainer button {
+    margin: 0; /* Removes default margin */
+    white-space: nowrap; /* Prevents text from wrapping */
+}   
+
+/* Wrapper for the form */
+.form-wrapper {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 20px; /* Add some space inside the box */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    max-width: 500px; /* Limit the width of the box */
+    margin: auto; /* Center the box horizontally */
+    text-align: center; /* Center the text inside the box */
+}
+
+/* Form Title */
+.form-wrapper h2 {
+    margin-bottom: 10px;
+}
+
+/* Form Description */
+.form-wrapper p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: gray;
+}
+
+
+#imageFiles {
+    display: block;
+}
+
+#createVideoButton {
+    margin-left: 20px;
+}
+
+#imageList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+#imageList div {
+    position: relative;
+    display: inline-block;
+}   
+
+#imageList img {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+.delete-btn:hover {
+    background-color: gray;
+}
+
+/* Ensure content doesn't overflow on small screens */
+.navbar-links {
+    flex-wrap: wrap;
+}
+
+.navbar-links a {
+    white-space: nowrap;
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 600px) {
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-links {
+        display: none;
+    }
+
+    /* Stack form elements in smaller screens */
+    #formContainer {
+        flex-direction: column;
+    }
+
+    #imageFiles,
+    #createVideoButton {
+        width: 100%;
+        margin-left: 0;
+    }
+}
